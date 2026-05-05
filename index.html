@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of Abdelouahab Mouline — Data Analyst, BI Analyst, Supply Chain & Automation profile." />
+  <meta name="author" content="Abdelouahab Mouline" />
+  <title>Abdelouahab Mouline | Data Analyst & Automation Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #070b18;
+      --bg-soft: #0d1326;
+      --card: rgba(255, 255, 255, 0.07);
+      --card-border: rgba(255, 255, 255, 0.12);
+      --text: #eef3ff;
+      --muted: #a8b3cf;
+      --accent: #7c3aed;
+      --accent-2: #06b6d4;
+      --accent-3: #22c55e;
+      --white: #ffffff;
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+      --radius: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(124, 58, 237, 0.28), transparent 34%),
+        radial-gradient(circle at 85% 15%, rgba(6, 182, 212, 0.22), transparent 30%),
+        radial-gradient(circle at 50% 80%, rgba(34, 197, 94, 0.08), transparent 30%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(20px);
+      background: rgba(7, 11, 24, 0.72);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .nav-inner {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      font-size: 1.08rem;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow: 0 12px 40px rgba(124, 58, 237, 0.35);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      color: var(--muted);
+      font-size: 0.93rem;
+      font-weight: 600;
+    }
+
+    .nav-links a {
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--white);
+      transform: translateY(-1px);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 13px 18px;
+      border-radius: 999px;
+      font-weight: 800;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: white;
+      box-shadow: 0 20px 50px rgba(124, 58, 237, 0.35);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--white);
+    }
+
+    .hero {
+      position: relative;
+      padding: 92px 0 70px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      gap: 48px;
+    }
+
+    .eyebrow {
+      width: fit-content;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 13px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.07);
+      border-radius: 999px;
+      color: #dbeafe;
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-bottom: 22px;
+      animation: fadeUp 0.75s ease both;
+    }
+
+    h1 {
+      font-size: clamp(2.6rem, 7vw, 5.7rem);
+      line-height: 0.96;
+      letter-spacing: -0.075em;
+      margin-bottom: 24px;
+      animation: fadeUp 0.75s ease 0.08s both;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #fff 10%, #a5b4fc 36%, #67e8f9 70%, #bbf7d0 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      max-width: 650px;
+      color: var(--muted);
+      font-size: 1.12rem;
+      margin-bottom: 30px;
+      animation: fadeUp 0.75s ease 0.16s both;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      animation: fadeUp 0.75s ease 0.24s both;
+    }
+
+    .hero-card {
+      position: relative;
+      min-height: 420px;
+      padding: 26px;
+      border: 1px solid var(--card-border);
+      background: linear-gradient(180deg, rgba(255,255,255,0.11), rgba(255,255,255,0.045));
+      border-radius: 34px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      animation: floatCard 5s ease-in-out infinite;
+    }
+
+    .hero-card::before {
+      content: '';
+      position: absolute;
+      inset: -100px;
+      background: conic-gradient(from 180deg, transparent, rgba(124,58,237,0.45), rgba(6,182,212,0.38), transparent 40%);
+      animation: rotateGlow 9s linear infinite;
+      opacity: 0.5;
+    }
+
+    .hero-card-inner {
+      position: relative;
+      height: 100%;
+      border-radius: 25px;
+      background: rgba(7, 11, 24, 0.78);
+      border: 1px solid rgba(255, 255, 255, 0.11);
+      padding: 24px;
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .metric {
+      padding: 18px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 1.7rem;
+      line-height: 1;
+      letter-spacing: -0.05em;
+    }
+
+    .metric span {
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+    .code-block {
+      margin-top: 22px;
+      padding: 18px;
+      border-radius: 18px;
+      background: #050817;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: #c4b5fd;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.88rem;
+    }
+
+    section {
+      padding: 84px 0;
+    }
+
+    .section-header {
+      max-width: 740px;
+      margin-bottom: 34px;
+    }
+
+    .section-label {
+      color: #67e8f9;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 3.3rem);
+      line-height: 1.05;
+      letter-spacing: -0.055em;
+      margin-bottom: 16px;
+    }
+
+    .section-header p,
+    .about-text p {
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .glass-card {
+      border: 1px solid var(--card-border);
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.18);
+      backdrop-filter: blur(18px);
+    }
+
+    .about-highlight {
+      padding: 30px;
+    }
+
+    .about-highlight h3 {
+      font-size: 1.45rem;
+      letter-spacing: -0.04em;
+      margin-bottom: 14px;
+    }
+
+    .about-highlight ul {
+      list-style: none;
+      display: grid;
+      gap: 14px;
+      color: var(--muted);
+    }
+
+    .about-highlight li {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .about-text {
+      padding: 30px;
+      display: grid;
+      gap: 18px;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .skill-card {
+      padding: 24px;
+    }
+
+    .skill-card h3 {
+      margin-bottom: 14px;
+      letter-spacing: -0.035em;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+    }
+
+    .chip {
+      padding: 8px 11px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.075);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: #dbeafe;
+      font-size: 0.86rem;
+      font-weight: 650;
+    }
+
+    .timeline {
+      position: relative;
+      display: grid;
+      gap: 18px;
+    }
+
+    .experience-card {
+      padding: 26px;
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 24px;
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+
+    .experience-card:hover,
+    .project-card:hover,
+    .skill-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(103, 232, 249, 0.36);
+    }
+
+    .role-meta small {
+      display: block;
+      color: #67e8f9;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .role-meta h3 {
+      font-size: 1.35rem;
+      line-height: 1.2;
+      letter-spacing: -0.04em;
+    }
+
+    .role-meta p {
+      color: var(--muted);
+      margin-top: 8px;
+    }
+
+    .experience-card ul {
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .experience-card li + li {
+      margin-top: 8px;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .project-card {
+      position: relative;
+      padding: 26px;
+      overflow: hidden;
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+
+    .project-card::after {
+      content: '';
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      right: -42px;
+      top: -42px;
+      border-radius: 50%;
+      background: rgba(124, 58, 237, 0.24);
+      filter: blur(4px);
+    }
+
+    .project-card h3 {
+      position: relative;
+      z-index: 1;
+      font-size: 1.28rem;
+      letter-spacing: -0.04em;
+      margin-bottom: 10px;
+    }
+
+    .project-card p {
+      position: relative;
+      z-index: 1;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .stack {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      font-size: 0.78rem;
+      font-weight: 800;
+      padding: 6px 9px;
+      border-radius: 999px;
+      color: #e0f2fe;
+      background: rgba(6, 182, 212, 0.12);
+      border: 1px solid rgba(6, 182, 212, 0.22);
+    }
+
+    .education-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .edu-card {
+      padding: 26px;
+    }
+
+    .edu-card h3 {
+      letter-spacing: -0.04em;
+      margin-bottom: 8px;
+    }
+
+    .edu-card p {
+      color: var(--muted);
+    }
+
+    .cta {
+      padding-bottom: 100px;
+    }
+
+    .cta-card {
+      position: relative;
+      padding: 46px;
+      border-radius: 34px;
+      overflow: hidden;
+      text-align: center;
+      background:
+        linear-gradient(135deg, rgba(124,58,237,0.38), rgba(6,182,212,0.20)),
+        rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.16);
+      box-shadow: var(--shadow);
+    }
+
+    .cta-card h2 {
+      margin-bottom: 14px;
+    }
+
+    .cta-card p {
+      max-width: 700px;
+      margin: 0 auto 24px;
+      color: #dbeafe;
+    }
+
+    .socials {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    footer {
+      padding: 28px 0;
+      color: var(--muted);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes floatCard {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+
+    @keyframes rotateGlow {
+      to { transform: rotate(360deg); }
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .about-grid,
+      .experience-card {
+        grid-template-columns: 1fr;
+      }
+
+      .skills-grid,
+      .projects-grid,
+      .education-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        width: min(100% - 28px, 1120px);
+      }
+
+      .hero {
+        padding-top: 58px;
+      }
+
+      .hero-card {
+        min-height: auto;
+      }
+
+      .metric-grid,
+      .skills-grid,
+      .projects-grid,
+      .education-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-card {
+        padding: 32px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top" aria-label="Go to top">
+        <span class="brand-mark">AM</span>
+        <span>Abdelouahab Mouline</span>
+      </a>
+      <div class="nav-links" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">🚀 Data • BI • Supply Chain • Automation</div>
+        <h1>Turning data into <span class="gradient-text">business impact.</span></h1>
+        <p>
+          I build data-driven systems, dashboards, and automated workflows that help teams reduce manual work, improve visibility, and make smarter operational decisions.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="mailto:abdelouahab.mouline.pro@gmail.com" class="btn btn-secondary">Let’s Connect</a>
+        </div>
+      </div>
+
+      <aside class="hero-card" aria-label="Portfolio highlights">
+        <div class="hero-card-inner">
+          <div class="section-label">Profile snapshot</div>
+          <h2>Data Analyst & Automation Builder</h2>
+          <p style="color: var(--muted); margin-top: 12px;">
+            Combining analytics, supply chain knowledge, and workflow automation to transform manual operations into scalable systems.
+          </p>
+
+          <div class="metric-grid">
+            <div class="metric">
+              <strong>40%</strong>
+              <span>estimated manual work reduced</span>
+            </div>
+            <div class="metric">
+              <strong>4+</strong>
+              <span>logistics & data experiences</span>
+            </div>
+            <div class="metric">
+              <strong>3</strong>
+              <span>featured portfolio projects</span>
+            </div>
+            <div class="metric">
+              <strong>2026</strong>
+              <span>alternance target</span>
+            </div>
+          </div>
+
+          <div class="code-block">
+            const mission = "Automate workflows. Improve decisions. Scale impact.";
+          </div>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <main>
+    <section id="about" class="reveal">
+      <div class="container about-grid">
+        <div class="about-highlight glass-card">
+          <div class="section-label">About me</div>
+          <h3>At the intersection of data, operations, and automation.</h3>
+          <ul>
+            <li>✅ Data Science & Business Intelligence student at EDC Paris</li>
+            <li>✅ Supply chain background with hands-on operational experience</li>
+            <li>✅ Passionate about AI, workflow automation, and business impact</li>
+          </ul>
+        </div>
+
+        <div class="about-text glass-card">
+          <p>
+            I’m Abdelouahab, a Data Science & Business Intelligence student at EDC Paris, passionate about building intelligent systems that bridge data, automation, and real business impact. My work sits at the intersection of analytics, AI, and operational efficiency.
+          </p>
+          <p>
+            Over the past few years, I’ve developed a strong foundation in data analysis, supply chain operations, and system automation. From designing dashboards to building data pipelines and workflow automations, I focus on making systems smarter, faster, and more reliable.
+          </p>
+          <p>
+            What drives me is measurable value: reducing repetitive tasks, improving data quality, creating decision-ready dashboards, and helping teams move from scattered processes to scalable workflows.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="reveal">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">Core skills</div>
+          <h2>Technical skills with an operational mindset.</h2>
+          <p>My profile combines analytics, BI, automation, and supply chain execution — a hybrid skill set designed for modern business teams.</p>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill-card glass-card">
+            <h3>📊 Data & Analytics</h3>
+            <div class="chips">
+              <span class="chip">Python</span><span class="chip">Pandas</span><span class="chip">NumPy</span><span class="chip">SQL</span><span class="chip">Data Cleaning</span><span class="chip">Data Analysis</span>
+            </div>
+          </div>
+          <div class="skill-card glass-card">
+            <h3>📈 BI & Visualization</h3>
+            <div class="chips">
+              <span class="chip">Power BI</span><span class="chip">DAX</span><span class="chip">Dashboards</span><span class="chip">KPI Monitoring</span><span class="chip">Excel Advanced</span>
+            </div>
+          </div>
+          <div class="skill-card glass-card">
+            <h3>🏗️ Data Engineering</h3>
+            <div class="chips">
+              <span class="chip">ETL</span><span class="chip">Data Modeling</span><span class="chip">APIs</span><span class="chip">Data Pipelines</span><span class="chip">PostgreSQL</span>
+            </div>
+          </div>
+          <div class="skill-card glass-card">
+            <h3>🤖 AI & Automation</h3>
+            <div class="chips">
+              <span class="chip">Workflow Automation</span><span class="chip">Google Apps Script</span><span class="chip">LLMs</span><span class="chip">ML Basics</span><span class="chip">No-code Tools</span>
+            </div>
+          </div>
+          <div class="skill-card glass-card">
+            <h3>🧰 Tools</h3>
+            <div class="chips">
+              <span class="chip">Google Sheets</span><span class="chip">VS Code</span><span class="chip">GitHub</span><span class="chip">Power Query</span>
+            </div>
+          </div>
+          <div class="skill-card glass-card">
+            <h3>🌍 Languages</h3>
+            <div class="chips">
+              <span class="chip">French — Fluent</span><span class="chip">English — Professional</span><span class="chip">Arabic — Native</span><span class="chip">Spanish — Basic</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="reveal">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">Experience</div>
+          <h2>Building visibility, reliability, and performance into operations.</h2>
+        </div>
+
+        <div class="timeline">
+          <article class="experience-card glass-card">
+            <div class="role-meta">
+              <small>Jul 2023 – Aug 2025</small>
+              <h3>Data & Supply Chain Coordinator</h3>
+              <p>Centre Lalla Amina, Rabat</p>
+            </div>
+            <ul>
+              <li>Designed an automated inventory management system using Excel and Power Query to centralize multi-source data.</li>
+              <li>Implemented automated stock tracking to reduce reporting errors and improve operational reliability.</li>
+              <li>Analyzed logistics data with Excel and Power BI to identify performance gaps and improve KPI monitoring.</li>
+              <li>Optimized repetitive processes through partial automation and better data structuring.</li>
+            </ul>
+          </article>
+
+          <article class="experience-card glass-card">
+            <div class="role-meta">
+              <small>Jan 2023 – Jun 2023</small>
+              <h3>Supply Chain & Data Assistant</h3>
+              <p>Carrefour, Casablanca</p>
+            </div>
+            <ul>
+              <li>Analyzed stock levels, shortages, and rotations to support operational performance.</li>
+              <li>Created KPI dashboards for faster and clearer decision-making.</li>
+              <li>Improved reporting tools by cleaning, structuring, and standardizing datasets.</li>
+              <li>Helped reduce reporting errors through stronger data quality practices.</li>
+            </ul>
+          </article>
+
+          <article class="experience-card glass-card">
+            <div class="role-meta">
+              <small>Jun 2022 – Nov 2022</small>
+              <h3>Logistics Flow & Data Assistant</h3>
+              <p>Emirates Logistics, Tanger</p>
+            </div>
+            <ul>
+              <li>Monitored goods flows and improved visibility across logistics operations.</li>
+              <li>Supported operational control and transport coordination activities.</li>
+              <li>Contributed to better stock tracking and logistics follow-up.</li>
+            </ul>
+          </article>
+
+          <article class="experience-card glass-card">
+            <div class="role-meta">
+              <small>Jun 2021 – Nov 2021</small>
+              <h3>Logistics Coordination Assistant</h3>
+              <p>Meyer & Meyer, Tanger</p>
+            </div>
+            <ul>
+              <li>Structured logistics reporting to improve traceability and operational follow-up.</li>
+              <li>Supported documentation and coordination in an international logistics environment.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="reveal">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">Featured projects</div>
+          <h2>Portfolio projects focused on automation, forecasting, and supply chain optimization.</h2>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card glass-card">
+            <h3>Automation & Lead Management System</h3>
+            <p>Built an automated lead generation and CRM workflow with personalized email outreach, pipeline tracking, and reduced manual work by an estimated 40%.</p>
+            <div class="stack">
+              <span class="tag">Google Sheets</span><span class="tag">APIs</span><span class="tag">Automation</span><span class="tag">Data Processing</span>
+            </div>
+          </article>
+
+          <article class="project-card glass-card">
+            <h3>Data Forecasting Project</h3>
+            <p>Analyzed time series data in Python, tested forecasting models, and compared results against baseline approaches to improve prediction accuracy.</p>
+            <div class="stack">
+              <span class="tag">Python</span><span class="tag">Prophet</span><span class="tag">ARIMAX</span><span class="tag">SARIMAX</span>
+            </div>
+          </article>
+
+          <article class="project-card glass-card">
+            <h3>Supply Chain Optimization System</h3>
+            <p>Cleaned logistics datasets, automated reorder point calculations, and simulated stock shortage scenarios to optimize inventory levels.</p>
+            <div class="stack">
+              <span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Inventory Analytics</span><span class="tag">Simulation</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="education" class="reveal">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">Education</div>
+          <h2>Academic foundation in data and supply chain.</h2>
+        </div>
+
+        <div class="education-grid">
+          <article class="edu-card glass-card">
+            <h3>EDC Paris Business School</h3>
+            <p><strong>PGE – Data Science & Business Intelligence</strong></p>
+            <p>2025 – Present</p>
+            <p>Specialization: Data Science, data analysis, and data structuring.</p>
+          </article>
+
+          <article class="edu-card glass-card">
+            <h3>ENCG Tanger</h3>
+            <p><strong>Master in Logistics & Transport Management</strong></p>
+            <p>2018 – 2025</p>
+            <p>Foundation in logistics, transport, supply chain operations, and management.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="cta reveal">
+      <div class="container">
+        <div class="cta-card">
+          <h2>Let’s build something smarter together.</h2>
+          <p>
+            I’m currently looking for an alternance starting September 2026 in Data, BI, Automation, or Supply Chain Analytics.
+          </p>
+          <div class="socials">
+            <a class="btn btn-primary" href="mailto:abdelouahab.mouline.pro@gmail.com">Email Me</a>
+            <a class="btn btn-secondary" href="https://linkedin.com/in/abdelouahab-mouline/" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="btn btn-secondary" href="https://github.com/your-username" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © <span id="year"></span> Abdelouahab Mouline. Built with HTML, CSS & JavaScript.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const revealElements = document.querySelectorAll('.reveal');
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.16
+    });
+
+    revealElements.forEach((element) => revealObserver.observe(element));
+  </script>
+</body>
+</html>
